@@ -48,7 +48,10 @@ function useProducts() {
   };
 
   const calculateSum = (cart) => {
-    return '?';
+    const sum = cart.reduce((total, curr)=>{
+       return total+= parseInt(curr.price);
+    },0);
+    return sum;
   };
 
   return { products, cart, addProduct, removeProduct, calculateSum };
